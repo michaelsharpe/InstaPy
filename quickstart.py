@@ -1,22 +1,25 @@
 from instapy import InstaPy
 
-insta_username = ''
-insta_password = ''
+#
+# use_firefox=True : Switches the browser from Chrome to Firefox/Geckodriver
+#                    which might be better on ARM based systems
+#                    The default value is False
+#
+# page_delay=25 : Tells the WebDriver to poll the DOM for a certain amount of time
+#                 when trying to find any element (or elements) not immediately available.
+#                 The default setting is 25.
+#
+# set_switch_language(False) : Firefox on english operating systems already defaults to english.
+#                              Set to True if the language seen in the login page is anything but English.
+#                              The default value is True
+#
 
-# if you want to run this script on a server, 
-# simply add nogui=True to the InstaPy() constructor
-session = InstaPy(username=insta_username, password=insta_password)
-session.login()
-
-# set up all the settings
-session.set_upper_follower_count(limit=2500)
-session.set_do_comment(True, percentage=10)
-session.set_comments(['aMEIzing!', 'So much fun!!', 'Nicey!'])
-session.set_dont_include(['friend1', 'friend2', 'friend3'])
-session.set_dont_like(['pizza', 'girl'])
-
-# do the actual liking
-session.like_by_tags(['natgeo', 'world'], amount=100)
-
-# end the bot session
-session.end()
+InstaPy(username='raw_magic_chocolate', password='Dragon93', use_firefox=True, page_delay=25)\
+    .set_switch_language(False)\
+    .login()\
+    .set_do_comment(False, percentage=10) \
+    .set_comments(['Cool!', 'Awesome!', 'Nice!']) \
+    .set_dont_include(['friend1', 'friend2', 'friend3']) \
+    .set_dont_like(['food', 'girl', 'hot']) \
+    .like_by_tags(['tarot', 'tarotreadersofinstagram', 'fullyraw', 'paleofriendly'], amount=500) \
+    .end()

@@ -98,3 +98,7 @@ ENV/
 
 # Editors
 .idea
+
+#driver files
+geckodriver
+geckodriver-v0.18.0-arm7hf.tar.gz
