@@ -102,3 +102,6 @@ ENV/
 #driver files
 geckodriver
 geckodriver-v0.18.0-arm7hf.tar.gz
+
+#logs
+logs/
