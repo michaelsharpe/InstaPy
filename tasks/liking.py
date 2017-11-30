@@ -46,12 +46,12 @@ competition = [
 
 def liking_routine_1():
     try:
-        session = InstaPy(username='raw_magic_chocolate', password='Dragon93', use_firefox=True, page_delay=25)
+        session = InstaPy(username='raw_magic_chocolate', password='Dragon93', use_firefox=True, page_delay=20)
 
         session.set_switch_language(False)    
         session.login()
-        session.set_upper_follower_count(limit=500)
-        session.set_lower_follower_count(limit=5)
+        session.set_upper_follower_count(limit=5000)
+        session.set_lower_follower_count(limit=25)
         session.set_dont_like(word_ban_list)
 
         # Like by smart hashtag
@@ -64,7 +64,7 @@ def liking_routine_1():
         # Interact with other users followers
         session.set_user_interact(amount=10, randomize=True, percentage=50, media='Photo')
         session.set_do_follow(enabled=False, percentage=70)
-        session.set_do_like(enabled=True, percentage=70)
+        session.set_do_like(enabled=True, percentage=80)
         session.set_comments(["Cool", "Super!"])
         session.set_do_comment(enabled=False, percentage=80)
         random_influencers = random.sample(influencers, 2)
